@@ -6,13 +6,13 @@ author: jianghaolu
 
 #Getting Started with App - Manage Web App Slots - in .Net #
 
-      Azure App Service basic sample for managing web apps.
-       - Create 3 web apps in 3 different regions
-       - Deploy to all 3 web apps
-       - For each of the web apps, create a staging slot
-       - For each of the web apps, deploy to staging slot
-       - For each of the web apps, auto-swap to production slot is triggered
-       - For each of the web apps, swap back (something goes wrong)
+          Azure App Service basic sample for managing web apps.
+           - Create 3 web apps in 3 different regions
+           - Deploy to all 3 web apps
+           - For each of the web apps, create a staging slot
+           - For each of the web apps, deploy to staging slot
+           - For each of the web apps, auto-swap to production slot is triggered
+           - For each of the web apps, swap back (something goes wrong)
 
 
 ## Running this Sample ##
