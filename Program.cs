@@ -3,8 +3,8 @@
 
 using Microsoft.Azure.Management.AppService.Fluent;
 using Microsoft.Azure.Management.Fluent;
-using Microsoft.Azure.Management.Resource.Fluent;
-using Microsoft.Azure.Management.Resource.Fluent.Core;
+using Microsoft.Azure.Management.ResourceManager.Fluent;
+using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
 using Microsoft.Azure.Management.Samples.Common;
 using System;
 using System.Net.Http;
@@ -94,7 +94,7 @@ namespace ManageWebAppSlots
 
                 var azure = Azure
                     .Configure()
-                    .WithLogLevel(HttpLoggingDelegatingHandler.Level.BASIC)
+                    .WithLogLevel(HttpLoggingDelegatingHandler.Level.Basic)
                     .Authenticate(credentials)
                     .WithDefaultSubscription();
 
@@ -111,17 +111,15 @@ namespace ManageWebAppSlots
         
         private static IWebApp CreateWebApp(IAzure azure, string rgName, string appName, Region region)
         {
-            var planName = SdkContext.RandomResourceName("jplan_", 15);
             var appUrl = appName + Suffix;
 
             Utilities.Log("Creating web app " + appName + " with master branch...");
 
             var app = azure.WebApps
                     .Define(appName)
-                    .WithExistingResourceGroup(rgName)
-                    .WithNewAppServicePlan(planName)
                     .WithRegion(region)
-                    .WithPricingTier(AppServicePricingTier.StandardS1)
+                    .WithExistingResourceGroup(rgName)
+                    .WithNewWindowsPlan(PricingTier.StandardS1)
                     .WithJavaVersion(JavaVersion.V8Newest)
                     .WithWebContainer(WebContainer.Tomcat8_0Newest)
                     .DefineSourceControl()
@@ -134,7 +132,7 @@ namespace ManageWebAppSlots
             Utilities.Print(app);
 
             Utilities.Log("CURLing " + appUrl + "...");
-            Utilities.Log(CheckAddress("http://" + appUrl));
+            Utilities.Log(Utilities.CheckAddress("http://" + appUrl));
             return app;
         }
 
@@ -169,10 +167,10 @@ namespace ManageWebAppSlots
             Utilities.Log("Deployed staging branch to slot " + slot.Name);
 
             Utilities.Log("CURLing " + slotUrl + "...");
-            Utilities.Log(CheckAddress("http://" + slotUrl));
+            Utilities.Log(Utilities.CheckAddress("http://" + slotUrl));
 
             Utilities.Log("CURLing " + appUrl + "...");
-            Utilities.Log(CheckAddress("http://" + appUrl));
+            Utilities.Log(Utilities.CheckAddress("http://" + appUrl));
         }
 
         private static void SwapProductionBackToSlot(IAzure azure, IDeploymentSlot slot)
@@ -185,15 +183,7 @@ namespace ManageWebAppSlots
             Utilities.Log("Swapped production slot back to " + slot.Name);
 
             Utilities.Log("CURLing " + appUrl + "...");
-            Utilities.Log(CheckAddress("http://" + appUrl));
-        }
-
-        private static HttpResponseMessage CheckAddress(string url)
-        {
-            using (var client = new HttpClient())
-            {
-                return client.GetAsync(url).Result;
-            }
+            Utilities.Log(Utilities.CheckAddress("http://" + appUrl));
         }
     }
 }

@@ -4,7 +4,7 @@ platforms: .Net
 author: jianghaolu
 ---
 
-#Getting Started with App - Manage Web App Slots - in .Net #
+# Getting Started with App - Manage Web App Slots - in .Net #
 
           Azure App Service basic sample for managing web apps.
            - Create 3 web apps in 3 different regions
