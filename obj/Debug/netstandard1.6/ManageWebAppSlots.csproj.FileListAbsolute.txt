@@ -1,0 +1,2 @@
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\bin\Debug\netstandard1.6\ManageWebAppSlots.deps.json
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\obj\Debug\netstandard1.6\ManageWebAppSlots.csproj.CoreCompileInputs.cache

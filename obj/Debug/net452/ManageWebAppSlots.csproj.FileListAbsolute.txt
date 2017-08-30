@@ -1,0 +1,4 @@
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\bin\Debug\net452\ManageWebAppSlots.runtimeconfig.json
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\bin\Debug\net452\ManageWebAppSlots.runtimeconfig.dev.json
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\obj\Debug\net452\ManageWebAppSlots.csproj.ManageWebAppSlots.exe.config
+C:\Sources\dotnet-samples\app-service-dotnet-manage-staging-and-production-slots-for-web-apps\obj\Debug\net452\ManageWebAppSlots.csproj.CoreCompileInputs.cache
