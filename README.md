@@ -4,20 +4,20 @@ languages:
 - csharp
 products:
 - azure
-services: App-Service
-platforms: dotnet
-author: yaohaizh
+extensions:
+- services: App-Service
+- platforms: dotnet
 ---
 
 # Getting started on managing staging and product slots for Web Apps in C# #
 
-          Azure App Service basic sample for managing web apps.
-           - Create 3 web apps in 3 different regions
-           - Deploy to all 3 web apps
-           - For each of the web apps, create a staging slot
-           - For each of the web apps, deploy to staging slot
-           - For each of the web apps, auto-swap to production slot is triggered
-           - For each of the web apps, swap back (something goes wrong)
+ Azure App Service basic sample for managing web apps.
+  - Create 3 web apps in 3 different regions
+  - Deploy to all 3 web apps
+  - For each of the web apps, create a staging slot
+  - For each of the web apps, deploy to staging slot
+  - For each of the web apps, auto-swap to production slot is triggered
+  - For each of the web apps, swap back (something goes wrong)
 
 
 ## Running this Sample ##
