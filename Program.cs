@@ -162,12 +162,13 @@ namespace ManageWebAppSlots
         {
             var slotUrl = website.Data.Name + "-" + slot.Data.Name + Suffix;
             var appUrl = website.Data.Name + Suffix;
-            var sourceControl = slot.GetWebSiteSlotSourceControl();
-            var sourceControl_lro = await sourceControl.CreateOrUpdateAsync(WaitUntil.Completed, new SiteSourceControlData()
+            var sourceControlCollection = slot.GetWebSiteSlotSourceControl();
+            var sourceControl_lro = await sourceControlCollection.CreateOrUpdateAsync(WaitUntil.Completed, new SiteSourceControlData()
             {
                 RepoUri = new Uri("https://github.com/jianghaolu/azure-site-test.git"),
                 Branch = "staging"
             });
+            var SourceControl = sourceControl_lro.Value;
             Utilities.Log("Deploying staging branch to slot " + slot.Data.Name + "...");
 
 

@@ -9,12 +9,15 @@ extensions:
   platforms: dotnet
 ---
 
-# Getting started on log streaming for Functions using C# #
+# Getting started on managing staging and product slots for Web Apps in C# #
 
- Azure App Service basic sample for managing function apps.
-  - Create a function app under the same new app service plan:
-    - Deploy to app using FTP
-    - stream logs for 30 seconds
+  Azure App Service basic sample for managing web apps.
+  - Create 3 web apps in 3 different regions
+  - Deploy to all 3 web apps
+  - For each of the web apps, create a staging slot
+  - For each of the web apps, deploy to staging slot
+  - For each of the web apps, auto-swap to production slot is triggered
+  - For each of the web apps, swap back (something goes wrong)
 
 
 ## Running this Sample ##
@@ -23,13 +26,13 @@ To run this sample:
 
 Set the environment variable `CLIENT_ID`,`CLIENT_SECRET`,`TENANT_ID`,`SUBSCRIPTION_ID` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-libraries-for-net/blob/master/AUTH.md).
 
-    git clone https://github.com/Azure-Samples/app-service-dotnet-manage-logs-for-function-apps.git
+    git clone https://github.com/Azure-Samples/app-service-dotnet-manage-staging-and-production-slots-for-web-apps.git
 
-    cd app-service-dotnet-manage-logs-for-function-apps
+    cd app-service-dotnet-manage-staging-and-production-slots-for-web-apps
 
     dotnet build
 
-    bin\Debug\net452\ManageFunctionAppLogs.exe
+    bin\Debug\net452\ManageWebAppSlots.exe
 
 ## More information ##
 
