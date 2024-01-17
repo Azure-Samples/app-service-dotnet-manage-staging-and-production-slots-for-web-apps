@@ -11,7 +11,7 @@ extensions:
 
 # Getting started on managing staging and product slots for Web Apps in C# #
 
- Azure App Service basic sample for managing web apps.
+  Azure App Service basic sample for managing web apps.
   - Create 3 web apps in 3 different regions
   - Deploy to all 3 web apps
   - For each of the web apps, create a staging slot
@@ -24,7 +24,7 @@ extensions:
 
 To run this sample:
 
-Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-libraries-for-net/blob/master/AUTH.md).
+Set the environment variable `CLIENT_ID`,`CLIENT_SECRET`,`TENANT_ID`,`SUBSCRIPTION_ID` with the full path for an auth file. See [how to create an auth file](https://github.com/Azure/azure-libraries-for-net/blob/master/AUTH.md).
 
     git clone https://github.com/Azure-Samples/app-service-dotnet-manage-staging-and-production-slots-for-web-apps.git
 
@@ -36,7 +36,7 @@ Set the environment variable `AZURE_AUTH_LOCATION` with the full path for an aut
 
 ## More information ##
 
-[Azure Management Libraries for C#](https://github.com/Azure/azure-sdk-for-net/tree/Fluent)
+[Azure Management Libraries for C#](https://github.com/Azure/azure-sdk-for-net/)
 [Azure .Net Developer Center](https://azure.microsoft.com/en-us/develop/net/)
 If you don't have a Microsoft Azure subscription you can get a FREE trial account [here](http://go.microsoft.com/fwlink/?LinkId=330212)
 
